@@ -1,0 +1,7 @@
+com\mycompany\bancodedados\AtualizarUsuario.class
+com\mycompany\bancodedados\BancoDeDados.class
+com\mycompany\bancodedados\ListarUsuarios.class
+com\mycompany\bancodedados\CriarTabela.class
+com\mycompany\bancodedados\InserirUsuario.class
+com\mycompany\bancodedados\ConexaoSQLite.class
+com\mycompany\bancodedados\DeletarUsuario.class
