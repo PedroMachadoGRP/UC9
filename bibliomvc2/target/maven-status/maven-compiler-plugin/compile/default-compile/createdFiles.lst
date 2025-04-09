@@ -1,0 +1,13 @@
+com\mycompany\bibliomvc2\dao\BooksDAO.class
+com\mycompany\bibliomvc2\view\LibraryFrame$2.class
+com\mycompany\bibliomvc2\view\LibraryFrame$6.class
+com\mycompany\bibliomvc2\view\LibraryFrame.class
+com\mycompany\bibliomvc2\database\CreateTables.class
+com\mycompany\bibliomvc2\Bibliomvc.class
+com\mycompany\bibliomvc2\view\LibraryFrame$5.class
+com\mycompany\bibliomvc2\view\LibraryFrame$1.class
+com\mycompany\bibliomvc2\database\ConnectSQLite.class
+com\mycompany\bibliomvc2\view\LibraryFrame$4.class
+com\mycompany\bibliomvc2\controller\BookController.class
+com\mycompany\bibliomvc2\view\LibraryFrame$3.class
+com\mycompany\bibliomvc2\model\Book.class
