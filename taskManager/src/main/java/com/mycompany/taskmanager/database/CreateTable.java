@@ -9,7 +9,7 @@ package com.mycompany.taskmanager.database;
  * @author PEDROMACHADODASILVA
  */
 public class CreateTable {
-    public class CreateTable {
+ 
     private static void createtable(){
     String sql = "CREATE TABLE IF NOT EXISTS tasks("
                 + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -34,4 +34,4 @@ public class CreateTable {
 
 }
     
-}
+
