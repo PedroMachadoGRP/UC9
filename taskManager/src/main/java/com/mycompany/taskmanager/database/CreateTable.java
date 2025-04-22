@@ -9,12 +9,11 @@ package com.mycompany.taskmanager.database;
  * @author PEDROMACHADODASILVA
  */
 public class CreateTable {
- 
-    private static void createtable(){
+     public static void createTable(Connection connection){
     String sql = "CREATE TABLE IF NOT EXISTS tasks("
-                + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + "id int AUTO_INCREMENT PRIMARY KEY ,"
                 + "title VARCHAR(100) NOT NULL,"
-                + "description TEXT NOT NULL,"
+                + "description TEXT ,"
                 + "expiration_date DATE,"
                 + "status ENUM('pendente', 'concluido') DEFAULT 'pendente')";
     
@@ -22,16 +21,11 @@ public class CreateTable {
     stmt.execute(sql);
     
    }catch(SQLException e){
-    throw new RuntimeException("Erro ao criar a tabela", e);
+    throw new RuntimeException("Erro ao criar a tabela"+ e.getLocalizedMessage());
 
 }
     
     }
-   
-
-        
-    
-
 }
     
 
