@@ -9,16 +9,33 @@ package com.mycompany.taskmanager.dao;
  * @author PEDROMACHADODASILVA
  */
 public class TaskDAO {
-     public boolean deleteTask(int id){
+     public boolean RegisterTask(Task task){
+        String sql = "INSERT INTO tasks (title,description,expiration_date,status) VALUES(?,?,?,?)";
+        
+        try(Connection conn = ConnectionSQL.conect()){
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            
+            stmt.setString(1, task.getTitle());
+            stmt.setString(2, task.getDescription());
+            stmt.setString(3,task.getExpireted_data());
+            stmt.setString(4,task.getStatus());
+            stmt.executeUpdate();
+            return true;
+        }catch(SQLException error){
+            error.printStackTrace();
+            return false;
+        }
+    }
+   public boolean deleteTask(int id){
     String sql = "DELETE FROM tasks WHERE id = ?";
- try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
-            pstmt.setInt(1, id);
-            return pstmt.executeUpdate() > 0;
+        try (Connection conn = ConnectionSQL.conect()) {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+            return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
             
         } 
-    
 }
