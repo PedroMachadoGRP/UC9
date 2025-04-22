@@ -38,4 +38,23 @@ public class TaskDAO {
         }
             
         } 
+
+
+       public List<Task> listTask(){
+        List<Task>  tasks = new ArrayList<>();
+        String sql = "SELECT Tasks FROM Task";
+        
+       try (Connection conn = ConnectionSQL.connect(); 
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+           ResultSet rs = stmt.executeQuery();
+            while (rs.next()){
+              Task task = new Task(rs.getString("task"), "");
+                tasks.add(task);
+            }     
+       }catch(SQLException e){
+       e.printStackTrace();
+       }
+       return tasks;
+   }
+    
 }
