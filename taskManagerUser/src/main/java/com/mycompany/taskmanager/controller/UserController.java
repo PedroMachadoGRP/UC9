@@ -9,5 +9,14 @@ package com.mycompany.taskmanager.controller;
  * @author PEDROMACHADODASILVA
  */
 public class UserController {
+
+     public static ArrayList<User> listarUsuarios( DefaultTableModel model){
+       ArrayList<User> users = UserDAO.listUser();
+       model.setColumnCount(0);
+       for (User user : users){
+       model.addRow(new Object[]{ user.getId(), user.getEmail()});
+       }
+         return null;
+    }
     
 }
