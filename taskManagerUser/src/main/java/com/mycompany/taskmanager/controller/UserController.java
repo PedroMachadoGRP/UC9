@@ -18,11 +18,13 @@ public class UserController {
        }
          return null;
     }
-        public static void deleteUser(String stringID) {
+
+      public static void deleteUser(String Email) {
         UserDAO userDAO = new UserDAO();
-        int id = Integer.parseInt(stringID);
+        userDAO.deleteUser(Email);
  
-        
-        userDAO.deleteUser(id);
-    
+        userDAO.deleteUser(Email);
+    }
+
 }
+       
