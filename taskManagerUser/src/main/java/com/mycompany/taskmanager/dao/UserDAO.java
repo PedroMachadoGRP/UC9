@@ -35,4 +35,20 @@ public class UserDAO {
             return false;
         }
     }
+
+    
+     public boolean deleteUser(String email) {
+        String sql = "DELETE FROM user WHERE email = ?";
+        try (Connection conn = ConnectionSQL.conect()) {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, email);
+            return stmt.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
+    
 }
