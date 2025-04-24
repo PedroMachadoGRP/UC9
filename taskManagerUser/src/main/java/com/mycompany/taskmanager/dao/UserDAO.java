@@ -65,5 +65,24 @@ public class UserDAO {
             error.printStackTrace();
             return false;
         }
-    } 
+    }
+     public static ArrayList<User> listUser() {
+          ArrayList<User> users = new ArrayList<>();
+    String sql = "SELECT email FROM users ORDER BY email ASC";
+
+    try (Connection conn = ConnectionSQL.conect(); 
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+        
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            User user = new User(rs.getString("name"), rs.getString("email")); // senha não exibida
+            users.add(user);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return users;
+
+
+    
 }
