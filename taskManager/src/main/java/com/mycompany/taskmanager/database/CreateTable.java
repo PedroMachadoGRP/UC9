@@ -29,26 +29,5 @@ public class CreateTable {
 
 }
     
-    }
-
-
-
-
-      public static void createTableUser(Connection connection){
-         String sql = "CREATE TABLE IF NOT EXISTS user("
-                + "id_User int AUTO_INCREMENT PRIMARY KEY ,"
-                + "name VARCHAR(100) NOT NULL,"
-                + "email VARCHAR(100) NOT NULL ,"
-                + "password VARCHAR(250) NOT NULL )";
-         
-          try(Statement stmt = connection.createStatement()){
-    stmt.execute(sql);
-    
-   }catch(SQLException e){
-        throw new RuntimeException("Erron in table creation"+ e.getMessage());
-   }
-   
- 
-     }
-     
+    }     
 }
