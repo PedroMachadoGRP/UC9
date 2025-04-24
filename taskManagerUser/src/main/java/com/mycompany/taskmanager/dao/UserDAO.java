@@ -49,6 +49,21 @@ public class UserDAO {
         }
 
     }
-
-    
+    public boolean UpdateUser(String email,String newName,String newPassword, String newEmail){
+        String sql = "UPDATE user SET name = ?, password = ?, email = ? WHERE email = ?";
+        String cryPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
+        
+        try(Connection con = ConnectionSQL.conect()){
+            PreparedStatement stmt = con.prepareStatement(sql);
+            
+            stmt.setString(1, newName);
+            stmt.setString(2,cryPassword);
+            stmt.setString(3, newEmail);
+            stmt.setString(4, email);
+            return stmt.executeUpdate() > 0;
+        }catch(SQLException error){
+            error.printStackTrace();
+            return false;
+        }
+    } 
 }
